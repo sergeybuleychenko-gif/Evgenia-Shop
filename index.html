@@ -193,3 +193,154 @@ com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="Ук�
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Evgenia Shop</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    background: #222;
+  }
+  header {
+    padding: 40px 20px 20px;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    color: #ff5c8d;
+    text-shadow: 0 0 10px #ff5c8d;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  nav button {
+    background: transparent;
+    border: 2px solid #ff5c8d;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    color: #ff5c8d;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  nav button.active, nav button:hover {
+    background-color: #ff5c8d;
+    color: #222;
+  }
+  .content {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 15px;
+  }
+  .product-list {
+    display: none;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .product-list.active {
+    display: flex;
+  }
+  .product-item {
+    background: #333;
+    border-radius: 12px;
+    width: 220px;
+    overflow: hidden;
+    box-shadow: 0 0 12px #ff5c8daa;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .product-item:hover {
+    transform: scale(1.05);
+  }
+  .product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .product-item p {
+    padding: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+  }
+  footer {
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ff5c8d;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<header>Evgenia Shop</header>
+
+<nav id="tabs">
+  <button class="tab-button active" data-tab="shorts">Шорты</button>
+  <button class="tab-button" data-tab="hoodies">Кофты</button>
+  <button class="tab-button" data-tab="tees">Майки</button>
+</nav>
+
+<div class="content">
+  <div class="product-list active" id="shorts">
+    <div class="product-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Джинсовые шорты" />
+      <p>Джинсовые шорты</p>
+    </div>
+    <div class="product-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Спортивные шорты" />
+      <p>Спортивные шорты</p>
+    </div>
+  </div>
+  <div class="product-list" id="hoodies">
+    <div class="product-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Толстовка с капюшоном" />
+      <p>Толстовка с капюшоном</p>
+    </div>
+    <div class="product-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Укороченная кофта" />
+      <p>Укороченная кофта</p>
+    </div>
+  </div>
+  <div class="product-list" id="tees">
+    <div class="product-item">
+      <p style="color:#ff5c8d; padding: 20px;">Майки пока не загружены</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#ff5c8d; text-decoration:none;">0972259292</a>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-button');
+  const productLists = document.querySelectorAll('.product-list');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      productLists.forEach(pl => pl.classList.remove('active'));
+
+      tab.classList.add('active');
+      const target = tab.getAttribute('data-tab');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
