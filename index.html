@@ -2,48 +2,92 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Evgenia Shop</title>
 <style>
+  /* Общие стили */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
   body, html {
-    margin: 0; padding: 0; height: 100%;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     overflow-x: hidden;
-    background: linear-gradient(135deg, #fceaff, #ffc3dd);
   }
+  /* Анимированный фон - плавная смена изображений */
+  .background-slideshow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+  .background-slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeAnimation 18s infinite;
+  }
+  .background-slideshow img:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .background-slideshow img:nth-child(2) {
+    animation-delay: 6s;
+  }
+  .background-slideshow img:nth-child(3) {
+    animation-delay: 12s;
+  }
+  @keyframes fadeAnimation {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    33% {opacity: 1;}
+    43% {opacity: 0;}
+    100% {opacity: 0;}
+  }
+
+  /* Заголовок */
   header {
     text-align: center;
     font-size: 4rem;
     font-weight: 900;
-    padding: 80px 20px 20px;
-    color: #bb2e68;
+    margin-top: 60px;
+    text-shadow:
+      0 0 10px #ff5c8d,
+      0 0 20px #ff5c8d,
+      0 0 30px #ff5c8d;
     user-select: none;
   }
+
+  /* Меню вкладок */
   nav {
+    margin: 40px 0 20px;
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin: 30px 0;
   }
   nav button {
-    background: transparent;
-    border: 3px solid #bb2e68;
-    border-radius: 30px;
     padding: 15px 35px;
     font-size: 1.2rem;
-    color: #bb2e68;
-    cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
+    background: transparent;
+    border: 3px solid #ff5c8d;
+    border-radius: 30px;
+    color: #ff5c8d;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   nav button.active, nav button:hover {
-    background-color: #bb2e68;
-    color: white;
+    background-color: #ff5c8d;
+    color: #fff;
   }
+
+  /* Контент с товарами */
   .content {
     max-width: 1000px;
     margin: 0 auto 80px;
-    padding: 0 15px;
+    padding: 0 20px;
   }
   .product-list {
     display: none;
@@ -56,291 +100,91 @@
     display: flex;
   }
   .product-item {
-    background: rgba(255,255,255,0.8);
-    border-radius: 15px;
-    overflow: hidden;
     width: 220px;
-    box-shadow: 0 0 15px rgba(187, 46, 104, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 92, 141, 0.6);
     cursor: pointer;
-    transition: transform 0.3s;
-    color: #333;
+    transition: transform 0.3s ease;
   }
   .product-item:hover {
     transform: scale(1.05);
   }
   .product-item img {
     width: 100%;
-    display: block;
     height: 220px;
     object-fit: cover;
-    background: #eee;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background: #333;
   }
   .product-item p {
     padding: 12px;
     font-weight: 700;
     font-size: 1.1rem;
-    text-align: center;
-  }
-  footer {
-    background: rgba(187, 46, 104, 0.2);
-    text-align: center;
-    padding: 25px 15px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    user-select: none;
-    color: #bb2e68;
-  }
-</style>
-</head>
-<body>
-
-<header>Evgenia Shop</header>
-
-<nav id="tabs">
-  <button class="tab-button active" data-tab="shorts">Шорты</button>
-  <button class="tab-button" data-tab="hoodies">Кофты</button>
-  <button class="tab-button" data-tab="tees">Майки</button>
-</nav>
-
-<div class="content">
-  <div class="product-list active" id="shorts">
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Джинсовые шорты" />
-      <p>Джинсовые шорты</p>
-    </div>
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Спортивные шорты" />
-      <p>Спортивные шорты</p>
-    </div>
-  </div>
-
-  <div class="product-list" id="hoodies">
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Толстовка с капюшоном" />
-      <p>Толстовка с капюшоном</p>
-    </div>
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Укороченная кофта" />
-      <p>Укороченная кофта</p>
-    </div>
-  </div>
-
-  <div class="product-list" id="tees">
-    <div class="product-item">
-      <p>Майки пока не загружены</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#bb2e68; text-decoration:none;">0972259292</a>
-</footer>
-
-<script>
-  const tabs = document.querySelectorAll('.tab-button');
-  const productLists = document.querySelectorAll('.product-list');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      productLists.forEach(pl => pl.classList.remove('active'));
-
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
-com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="Укороченная кофта" />
-      <p>Укороченная кофта</p>
-    </div>
-  </div>
-  <div class="product-list" id="tees">
-    <div class="product-item">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80" alt="Белая майка" />
-      <p>Белая майка</p>
-    </div>
-    <div class="product-item">
-      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=500&q=80" alt="Спортивная майка" />
-      <p>Спортивная майка</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#ff5c8d; text-decoration:none;">0972259292</a>
-</footer>
-
-<script>
-  const tabs = document.querySelectorAll('.tab-button');
-  const productLists = document.querySelectorAll('.product-list');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      productLists.forEach(pl => pl.classList.remove('active'));
-
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Evgenia Shop</title>
-<style>
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
-    background: #222;
-  }
-  header {
-    padding: 40px 20px 20px;
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
-    color: #ff5c8d;
-    text-shadow: 0 0 10px #ff5c8d;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
-  nav button {
-    background: transparent;
-    border: 2px solid #ff5c8d;
-    border-radius: 25px;
-    padding: 10px 25px;
-    font-size: 1.1rem;
-    color: #ff5c8d;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  nav button.active, nav button:hover {
-    background-color: #ff5c8d;
-    color: #222;
-  }
-  .content {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 0 15px;
-  }
-  .product-list {
-    display: none;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    display: flex;
-  }
-  .product-list.active {
-    display: flex;
-  }
-  .product-item {
-    background: #333;
-    border-radius: 12px;
-    width: 220px;
-    overflow: hidden;
-    box-shadow: 0 0 12px #ff5c8daa;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .product-item:hover {
-    transform: scale(1.05);
-  }
-  .product-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-  .product-item p {
-    padding: 10px;
-    font-weight: 700;
-    font-size: 1rem;
     text-align: center;
   }
+
+  /* Футер */
   footer {
     text-align: center;
-    padding: 20px 15px;
-    font-size: 1rem;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.6);
     font-weight: 600;
+    font-size: 1rem;
     letter-spacing: 1px;
-    color: #ff5c8d;
     user-select: none;
+    color: #ff5c8d;
+  }
+  footer a {
+    color: #ff5c8d;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Кнопка репутации */
+  #reputation-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #ff5c8d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff5c8d;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  #reputation-btn:hover {
+    background-color: #cc496f;
+  }
+
+  /* Адаптив */
+  @media (max-width: 600px) {
+    header {
+      font-size: 2.5rem;
+      margin-top: 40px;
+    }
+    nav {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .product-item {
+      width: 45%;
+    }
   }
 </style>
 </head>
 <body>
 
-<header>Evgenia Shop</header>
-
-<nav id="tabs">
-  <button class="tab-button active" data-tab="shorts">Шорты</button>
-  <button class="tab-button" data-tab="hoodies">Кофты</button>
-  <button class="tab-button" data-tab="tees">Майки</button>
-</nav>
-
-<div class="content">
-  <div class="product-list active" id="shorts">
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Джинсовые шорты" />
-      <p>Джинсовые шорты</p>
-    </div>
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Спортивные шорты" />
-      <p>Спортивные шорты</p>
-    </div>
-  </div>
-  <div class="product-list" id="hoodies">
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Толстовка с капюшоном" />
-      <p>Толстовка с капюшоном</p>
-    </div>
-    <div class="product-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Укороченная кофта" />
-      <p>Укороченная кофта</p>
-    </div>
-  </div>
-  <div class="product-list" id="tees">
-    <div class="product-item">
-      <p style="color:#ff5c8d; padding: 20px;">Майки пока не загружены</p>
-    </div>
-  </div>
+<div class="background-slideshow">
+  <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1470&q=80" alt="Одежда 1" />
+  <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1471&q=80" alt="Одежда 2" />
+  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1470&q=80" alt="Одежда 3" />
 </div>
-
-<footer>
-  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#ff5c8d; text-decoration:none;">0972259292</a>
-</footer>
-
-<script>
-  const tabs = document.querySelectorAll('.tab-button');
-  const productLists = document.querySelectorAll('.product-list');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      productLists.forEach(pl => pl.classList.remove('active'));
-
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
