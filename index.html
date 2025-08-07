@@ -4,43 +4,115 @@
   <meta charset="UTF-8" />
   <title>Evgenia Shop</title>
   <style>
-    /* Фон с плавным градиентом */
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      background: radial-gradient(ellipse at center, #0d0d1a 0%, #000000 80%);
+      overflow: hidden;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
+      color: #fff;
+      user-select: none;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: starMove 60s linear infinite;
+      opacity: 0.6;
+      z-index: 0;
+    }
+    @keyframes starMove {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 5000px;}
+    }
+    h1 {
+      position: relative;
+      font-size: 6rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      z-index: 1;
+      color: #ffd700;
+      text-shadow:
+        0 0 10px #ffd700,
+        0 0 20px #ffa500,
+        0 0 30px #ff8c00,
+        0 0 40px #ff4500,
+        0 0 70px #ff4500;
+      animation: flicker 3s infinite alternate;
+      margin-bottom: 40px;
+    }
+    @keyframes flicker {
+      0%, 100% {
+        opacity: 1;
+        text-shadow:
+          0 0 10px #ffd700,
+          0 0 20px #ffa500,
+          0 0 30px #ff8c00,
+          0 0 40px #ff4500,
+          0 0 70px #ff4500;
+      }
+      50% {
+        opacity: 0.7;
+        text-shadow:
+          0 0 5px #fff8dc,
+          0 0 10px #ffdead,
+          0 0 15px #ffdab9,
+          0 0 20px #ffa07a,
+          0 0 35px #ff7f50;
+      }
+    }
+    /* Кнопка */
+    .btn-shop {
+      position: relative;
+      z-index: 1;
+      padding: 15px 50px;
+      font-size: 1.5rem;
+      color: #fff;
+      background: linear-gradient(45deg, #ff4500, #ff8c00);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #ff4500,
+        0 0 20px #ff8c00;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 3px;
       user-select: none;
       overflow: hidden;
     }
-
-    /* Стиль заголовка */
-    h1 {
-      font-size: 5rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-      letter-spacing: 6px;
-      animation: glow 2.5s ease-in-out infinite alternate;
+    .btn-shop:hover {
+      background: linear-gradient(45deg, #ff8c00, #ff4500);
+      box-shadow:
+        0 0 20px #ff8c00,
+        0 0 40px #ff4500;
+      transform: scale(1.1);
     }
-
-    /* Анимация свечения */
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff7e5f, 0 0 30px #feb47b;
-      }
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 40px #ff7e5f, 0 0 60px #feb47b;
-      }
+    .btn-shop::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 80%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .btn-shop:hover::before {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
   <h1>Evgenia Shop</h1>
+  <button class="btn-shop" onclick="alert('Добро пожаловать в магазин!')">Перейти в магазин</button>
 </body>
 </html>
-<meta http-equiv="Cache-Control" content="no-store">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
