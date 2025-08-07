@@ -9,51 +9,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     overflow-x: hidden;
-  }
-  body {
-    background: #000;
-    position: relative;
-    z-index: 1;
-  }
-  .animated-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-    z-index: -1;
-  }
-  .animated-bg img {
-    position: absolute;
-    width: 150px;
-    opacity: 0.15;
-    animation: floatUpDown 20s linear infinite;
-    filter: drop-shadow(0 0 3px rgba(255,255,255,0.2));
-  }
-  .animated-bg img:nth-child(1) {
-    left: 10%; animation-delay: 0s; top: 80%;
-  }
-  .animated-bg img:nth-child(2) {
-    left: 30%; animation-delay: 6s; top: 70%;
-  }
-  .animated-bg img:nth-child(3) {
-    left: 50%; animation-delay: 12s; top: 75%;
-  }
-  .animated-bg img:nth-child(4) {
-    left: 70%; animation-delay: 3s; top: 85%;
-  }
-  .animated-bg img:nth-child(5) {
-    left: 85%; animation-delay: 9s; top: 80%;
-  }
-  @keyframes floatUpDown {
-    0%, 100% { transform: translateY(0) }
-    50% { transform: translateY(-40px) }
+    background: linear-gradient(135deg, #fceaff, #ffc3dd);
   }
   header {
     text-align: center;
     font-size: 4rem;
     font-weight: 900;
     padding: 80px 20px 20px;
-    text-shadow: 0 0 15px #ff5c8d, 0 0 40px #ff5c8d;
+    color: #bb2e68;
     user-select: none;
   }
   nav {
@@ -64,17 +27,17 @@
   }
   nav button {
     background: transparent;
-    border: 3px solid #ff5c8d;
+    border: 3px solid #bb2e68;
     border-radius: 30px;
     padding: 15px 35px;
     font-size: 1.2rem;
-    color: #ff5c8d;
+    color: #bb2e68;
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
   }
   nav button.active, nav button:hover {
-    background-color: #ff5c8d;
+    background-color: #bb2e68;
     color: white;
   }
   .content {
@@ -93,13 +56,14 @@
     display: flex;
   }
   .product-item {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.8);
     border-radius: 15px;
     overflow: hidden;
     width: 220px;
-    box-shadow: 0 0 15px rgba(255, 92, 141, 0.6);
+    box-shadow: 0 0 15px rgba(187, 46, 104, 0.6);
     cursor: pointer;
     transition: transform 0.3s;
+    color: #333;
   }
   .product-item:hover {
     transform: scale(1.05);
@@ -109,35 +73,27 @@
     display: block;
     height: 220px;
     object-fit: cover;
-    background: #333;
+    background: #eee;
   }
   .product-item p {
     padding: 12px;
     font-weight: 700;
     font-size: 1.1rem;
-    color: #fff;
     text-align: center;
   }
   footer {
-    background: rgba(0,0,0,0.7);
+    background: rgba(187, 46, 104, 0.2);
     text-align: center;
     padding: 25px 15px;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
     user-select: none;
+    color: #bb2e68;
   }
 </style>
 </head>
 <body>
-
-<div class="animated-bg">
-  <img src="https://i.imgur.com/xHcKZB1.jpg" alt="Платье" />
-  <img src="https://i.imgur.com/XrqLMhG.jpg" alt="Куртка" />
-  <img src="https://i.imgur.com/nqSReMM.jpg" alt="Костюм" />
-  <img src="https://i.imgur.com/bYw6uMf.jpg" alt="Платье2" />
-  <img src="https://i.imgur.com/EoUKNqP.jpg" alt="Куртка2" />
-</div>
 
 <header>Evgenia Shop</header>
 
@@ -150,18 +106,52 @@
 <div class="content">
   <div class="product-list active" id="shorts">
     <div class="product-item">
-      <img src="https://i.imgur.com/2Ivtg1W.jpg" alt="Джинсовые шорты" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Джинсовые шорты" />
       <p>Джинсовые шорты</p>
     </div>
     <div class="product-item">
-      <img src="https://i.imgur.com/4qZRDST.jpg" alt="Спортивные шорты" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Спортивные шорты" />
       <p>Спортивные шорты</p>
     </div>
-    <div class="product-item">
-      <img src="https://i.imgur.com/6h7XhOm.jpg" alt="Летние шорты" />
-      <p>Летние шорты</p>
-    </div>
   </div>
+
   <div class="product-list" id="hoodies">
     <div class="product-item">
-      <img src="https://i.imgur.com/bhwND6F.
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Толстовка с капюшоном" />
+      <p>Толстовка с капюшоном</p>
+    </div>
+    <div class="product-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD..." alt="Укороченная кофта" />
+      <p>Укороченная кофта</p>
+    </div>
+  </div>
+
+  <div class="product-list" id="tees">
+    <div class="product-item">
+      <p>Майки пока не загружены</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#bb2e68; text-decoration:none;">0972259292</a>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-button');
+  const productLists = document.querySelectorAll('.product-list');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      productLists.forEach(pl => pl.classList.remove('active'));
+
+      tab.classList.add('active');
+      const target = tab.getAttribute('data-tab');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
