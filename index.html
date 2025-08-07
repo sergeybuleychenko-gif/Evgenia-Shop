@@ -1,19 +1,15 @@
-> hex.):
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <title>Evgenia Shop</title>
 <style>
-  /* Общие стили */
   body, html {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     overflow-x: hidden;
   }
-
-  /* Анимированный фон с изображениями */
   body {
     background: #000;
     position: relative;
@@ -52,8 +48,6 @@
     0%, 100% { transform: translateY(0) }
     50% { transform: translateY(-40px) }
   }
-
-  /* Заголовок */
   header {
     text-align: center;
     font-size: 4rem;
@@ -62,8 +56,6 @@
     text-shadow: 0 0 15px #ff5c8d, 0 0 40px #ff5c8d;
     user-select: none;
   }
-
-  /* Меню вкладок */
   nav {
     display: flex;
     justify-content: center;
@@ -85,15 +77,11 @@
     background-color: #ff5c8d;
     color: white;
   }
-
-  /* Контейнер списков */
   .content {
     max-width: 1000px;
     margin: 0 auto 80px;
     padding: 0 15px;
   }
-
-  /* Списки товаров */
   .product-list {
     display: none;
     gap: 25px;
@@ -104,7 +92,6 @@
   .product-list.active {
     display: flex;
   }
-
   .product-item {
     background: rgba(255,255,255,0.1);
     border-radius: 15px;
@@ -120,6 +107,9 @@
   .product-item img {
     width: 100%;
     display: block;
+    height: 220px;
+    object-fit: cover;
+    background: #333;
   }
   .product-item p {
     padding: 12px;
@@ -128,8 +118,6 @@
     color: #fff;
     text-align: center;
   }
-
-  /* Подвал */
   footer {
     background: rgba(0,0,0,0.7);
     text-align: center;
@@ -143,7 +131,6 @@
 </head>
 <body>
 
-<!-- Анимированный фон -->
 <div class="animated-bg">
   <img src="https://i.imgur.com/xHcKZB1.jpg" alt="Платье" />
   <img src="https://i.imgur.com/XrqLMhG.jpg" alt="Куртка" />
@@ -161,77 +148,20 @@
 </nav>
 
 <div class="content">
-  <!-- Шорты -->
   <div class="product-list active" id="shorts">
     <div class="product-item">
-      <img src="https://i.imgur.com/2Ivtg1W.jpg" alt="Шорты 1" />
+      <img src="https://i.imgur.com/2Ivtg1W.jpg" alt="Джинсовые шорты" />
       <p>Джинсовые шорты</p>
     </div>
     <div class="product-item">
-      <img src="https://i.imgur.com/4qZRDST.jpg" alt="Шорты 2" />
+      <img src="https://i.imgur.com/4qZRDST.jpg" alt="Спортивные шорты" />
       <p>Спортивные шорты</p>
     </div>
     <div class="product-item">
-      <img src="https://i.imgur.com/6h7XhOm.jpg" alt="Шорты 3" />
+      <img src="https://i.imgur.com/6h7XhOm.jpg" alt="Летние шорты" />
       <p>Летние шорты</p>
     </div>
   </div>
-
-> hex.):
-<!-- Кофты -->
   <div class="product-list" id="hoodies">
     <div class="product-item">
-      <img src="https://i.imgur.com/bhwND6F.jpg" alt="Кофта 1" />
-      <p>Толстовка с капюшоном</p>
-    </div>
-    <div class="product-item">
-      <img src="https://i.imgur.com/sS5PplQ.jpg" alt="Кофта 2" />
-      <p>Укороченная кофта</p>
-    </div>
-    <div class="product-item">
-      <img src="https://i.imgur.com/qxz4Gup.jpg" alt="Кофта 3" />
-      <p>Свободная кофта</p>
-    </div>
-  </div>
-
-  <!-- Майки -->
-  <div class="product-list" id="tees">
-    <div class="product-item">
-      <img src="https://i.imgur.com/DwoLM6P.jpg" alt="Майка 1" />
-      <p>Белая майка</p>
-    </div>
-    <div class="product-item">
-      <img src="https://i.imgur.com/oxpGqzx.jpg" alt="Майка 2" />
-      <p>Спортивная майка</p>
-    </div>
-    <div class="product-item">
-      <img src="https://i.imgur.com/yfYbCO8.jpg" alt="Майка 3" />
-      <p>Яркая майка</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  Кобиш Евгения | Телефон: <a href="tel:+380972259292" style="color:#ff5c8d; text-decoration:none;">0972259292</a>
-</footer>
-
-<script>
-  const tabs = document.querySelectorAll('.tab-button');
-  const productLists = document.querySelectorAll('.product-list');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Убираем активный класс у всех вкладок и списков
-      tabs.forEach(t => t.classList.remove('active'));
-      productLists.forEach(pl => pl.classList.remove('active'));
-
-      // Добавляем активный класс к выбранной вкладке и списку товаров
-      tab.classList.add('active');
-      const target = tab.getAttribute('data-tab');
-      document.getElementById(target).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
+      <img src="https://i.imgur.com/bhwND6F.
