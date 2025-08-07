@@ -1,384 +1,63 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Evgenia Shop</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-      font-size: 4rem;
-      font-weight: bold;
-      text-shadow: 0 0 20px #f8e71c;
-    }
-
-    .btn-main {
-      display: block;
-      margin: 0 auto 40px;
-      padding: 15px 40px;
-      font-size: 1.3rem;
-      color: white;
-      background: #ff6a00;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #ff6a00;
-      transition: transform 0.3s;
-    }
-
-    .btn-main:hover {
-      transform: scale(1.1);
-    }
-
-    .section {
-      display: none;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .product {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 20px;
-      width: 200px;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .product-name {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      font-size: 1rem;
-    }
-
-    .btn-reputation {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 25px;
-      font-size: 1rem;
-      background: #1e90ff;
-      border: none;
-      border-radius: 20px;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .btn-reputation:hover {
-      background: #3ea0ff;
-    }
-  </style>
-</head>
-<body>
-
-  <header>Evgenia Shop</header>
-
-  <button class="btn-main" onclick="document.getElementById('shop').style.display='block'; this.style.display='none';">Перейти в магазин</button>
-
-  <div class="section" id="shop">
-    <h2>Женская одежда</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=Платье" alt="Платье">
-        <div class="product-name">Летнее платье</div>
+<p>Деловой костюм</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=Куртка" alt="Куртка">
-        <div class="product-name">Женская куртка</div>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=Костюм" alt="Костюм">
-        <div class="product-name">Стильный костюм</div>
+      <div class="product-item">
+        <img src="https://i.imgur.com/TPiTnMx.jpg" alt="Костюм 2" />
+        <p>Стильный костюм</p>
       </div>
     </div>
+
   </div>
 
-  <footer>
-    © 2025 Evgenia Shop<br>
-    Контакт: Евгения Кобиш<br>
-    Телефон: <a href="tel:+380982258292" style="color: #ffd700;">098 225 82 92</a><br>
-    <button class="btn-reputation" onclick="alert('Надёжный магазин с отличными отзывами!')">Репутация сайта</button>
-  </footer>
+  <div>
+    <button class="btn-secondary" onclick="alert('Надёжный магазин с отличными отзывами!')">Репутация сайта</button>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Evgenia Shop</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #fbd3e9, #bb377d);
-            color: #fff;
-            text-align: center;
-        }
-        header {
-            padding: 50px 0 20px 0;
-            font-size: 3em;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .btn-main {
-            background-color: #fff;
-            color: #bb377d;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-        .btn-main:hover {
-            background-color: #ff8fc4;
-            color: #fff;
-        }
-        .sections {
-            display: none;
-            margin-top: 30px;
-        }
-        .section {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            margin: 10px auto;
-            width: 60%;
-            border-radius: 15px;
-            font-size: 1.2em;
-        }
-        .footer {
-            margin-top: 60px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.2);
-            font-size: 0.95em;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-secondary:hover {
-            background-color: #fff;
-            color: #bb377d;
-        }
-    </style>
-</head>
-<body>
-
-<header>Evgenia Shop</header>
-
-<button class="btn-main" onclick="showSections()">Перейти в магазин</button>
-
-<div class="sections" id="sections">
-    <div class="section">Женская одежда</div>
-</div>
-
-<div style="margin-top: 30px;">
-    <button class="btn-secondary" onclick="alert('Пока что раздел в разработке')">Репутация сайта</button>
-    
-    <!-- Кнопка оплаты (замени data и signature на настоящие из LiqPay) -->
-    <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" style="display:inline-block;">
-        <input type="hidden" name="data" value="...">
-        <input type="hidden" name="signature" value="...">
-        <input type="submit" class="btn-secondary" value="Оплатить">
+    <!-- Заглушка кнопки оплаты (замени data и signature на реальные из LiqPay) -->
+    <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" class="inline">
+      <input type="hidden" name="data" value="...">
+      <input type="hidden" name="signature" value="...">
+      <input type="submit" class="btn-secondary" value="Оплатить">
     </form>
+  </div>
+
 </div>
 
-<div class="footer">
-    <p>Контакты:</p>
-    <p>Евгения Кобиш – 0982258292</p>
-    <p>Техподдержка – 0982259292</p>
-</div>
+<footer class="footer">
+  <p>Контакты:</p>
+  <p>Евгения Кобиш – 0982258292</p>
+  <p>Техподдержка – 0982259292</p>
+</footer>
 
 <script>
-    function showSections() {
-        document.getElementById('sections').style.display = 'block';
+  const btnShop = document.getElementById('btnShop');
+  const categories = document.getElementById('categories');
+  const products = document.getElementById('products');
+
+  btnShop.onclick = () => {
+    btnShop.style.display = 'none';
+    categories.classList.add('active');
+  };
+
+  function showProducts(category) {
+    categories.classList.remove('active');
+    products.classList.add('active');
+
+    // Скрыть все списки товаров
+    document.querySelectorAll('.product-list').forEach(el => el.style.display = 'none');
+
+    // Показать выбранный список товаров
+    const list = document.getElementById(category);
+    if (list) {
+      list.style.display = 'flex';
+      list.style.justifyContent = 'center';
+      list.style.flexWrap = 'wrap';
+      list.style.gap = '20px';
     }
-</script>
+  }
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Evgenia Shop</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #fbd3e9, #bb377d);
-            color: #fff;
-            text-align: center;
-        }
-        header {
-            padding: 50px 0 20px 0;
-            font-size: 3em;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .btn-main {
-            background-color: #fff;
-            color: #bb377d;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-        .btn-main:hover {
-            background-color: #ff8fc4;
-            color: #fff;
-        }
-        .sections {
-            display: none;
-            margin-top: 30px;
-        }
-        .section {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            margin: 10px auto;
-            width: 80%;
-            border-radius: 15px;
-            font-size: 1.2em;
-        }
-        .item {
-            display: inline-block;
-            width: 250px;
-            margin: 15px;
-            background-color: #fff;
-            color: #000;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .item img {
-            width: 100%;
-            height: auto;
-        }
-        .item p {
-            padding: 10px;
-            font-weight: bold;
-        }
-        .footer {
-            margin-top: 60px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.2);
-            font-size: 0.95em;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-secondary:hover {
-            background-color: #fff;
-            color: #bb377d;
-        }
-    </style>
-</head>
-<body>
-
-<header>Evgenia Shop</header>
-
-<button class="btn-main" onclick="showSections()">Перейти в магазин</button>
-
-<div class="sections" id="sections">
-    <div class="section">
-        <h2>Женская одежда</h2>
-        <div class="item">
-            <img src="https://i.imgur.com/XrqLMhG.jpg" alt="Куртка">
-            <p>Куртки</p>
-        </div>
-        <div class="item">
-            <img src="https://i.imgur.com/xHcKZB1.jpg" alt="Платье">
-            <p>Платья</p>
-        </div>
-        <div class="item">
-            <img src="https://i.imgur.com/nqSReMM.jpg" alt="Костюм">
-            <p>Костюмы</p>
-        </div>
-    </div>
-</div>
-
-<div style="margin-top: 30px;">
-    <button class="btn-secondary" onclick="alert('Пока что раздел в разработке')">Репутация сайта</button>
-    
-    <!-- Кнопка оплаты (замени data и signature на настоящие из LiqPay) -->
-    <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" style="display:inline-block;">
-        <input type="hidden" name="data" value="...">
-        <input type="hidden" name="signature" value="...">
-        <input type="submit" class="btn-secondary" value="Оплатить">
-    </form>
-</div>
-
-<div class="footer">
-    <p>Контакты:</p>
-    <p>Евгения Кобиш – 0982258292</p>
-    <p>Техподдержка – 0982259292</p>
-</div>
-
-<script>
-    function showSections() {
-        document.getElementById('sections').style.display = 'block';
-    }
+  function backToCategories() {
+    products.classList.remove('active');
+    categories.classList.add('active');
+  }
 </script>
 
 </body>
