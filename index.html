@@ -145,3 +145,106 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Evgenia Shop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #fbd3e9, #bb377d);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            padding: 50px 0 20px 0;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .btn-main {
+            background-color: #fff;
+            color: #bb377d;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn-main:hover {
+            background-color: #ff8fc4;
+            color: #fff;
+        }
+        .sections {
+            display: none;
+            margin-top: 30px;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 10px auto;
+            width: 60%;
+            border-radius: 15px;
+            font-size: 1.2em;
+        }
+        .footer {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            font-size: 0.95em;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #bb377d;
+        }
+    </style>
+</head>
+<body>
+
+<header>Evgenia Shop</header>
+
+<button class="btn-main" onclick="showSections()">Перейти в магазин</button>
+
+<div class="sections" id="sections">
+    <div class="section">Женская одежда</div>
+</div>
+
+<div style="margin-top: 30px;">
+    <button class="btn-secondary" onclick="alert('Пока что раздел в разработке')">Репутация сайта</button>
+    
+    <!-- Кнопка оплаты (замени data и signature на настоящие из LiqPay) -->
+    <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" style="display:inline-block;">
+        <input type="hidden" name="data" value="...">
+        <input type="hidden" name="signature" value="...">
+        <input type="submit" class="btn-secondary" value="Оплатить">
+    </form>
+</div>
+
+<div class="footer">
+    <p>Контакты:</p>
+    <p>Евгения Кобиш – 0982258292</p>
+    <p>Техподдержка – 0982259292</p>
+</div>
+
+<script>
+    function showSections() {
+        document.getElementById('sections').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
