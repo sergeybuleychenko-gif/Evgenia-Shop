@@ -1,10 +1,9 @@
-> hex.):
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Евгения Шоп</title>
+    <title>Платья - Евгения Шоп</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,7 +16,6 @@
             display: flex;
             flex-direction: column;
         }
-        /* Анимированный фон */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -59,126 +57,35 @@
         nav a:hover {
             color: #ff69b4;
         }
-        .banner {
-            background: url('https://via.placeholder.com/1200x300') center/cover;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 2em;
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1em;
+            padding: 2em;
         }
-        .banner h2 {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 0.5em 1em;
-            border-radius: 5px;
-        }
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
+        .product-card {
+            border: 1px solid #ddd;
             padding: 1em;
-            margin-top: auto;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            nav a {
-                display: block;
-                margin: 0.5em 0;
-            }
-            .banner {
-                height: 200px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="animated-bg"></div>
-    <header>
-        <h1>Евгения Шоп</h1>
-    </header>
-    <nav>
-        <a href="dresses.html">Платья</a>
-        <a href="skirts.html">Юбки</a>
-
-> hex.):
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Евгения Шоп</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        /* Анимированный фон */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #f8e1e9, #d9e4f5, #f5e1d9, #e1f5e9);
-            background-size: 400%;
-            animation: colorChange 15s ease infinite;
-            z-index: -1;
-        }
-        @keyframes colorChange {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
             text-align: center;
-            padding: 1.5em;
-        }
-        header h1 {
-            font-size: 2.5em;
-            font-family: 'Georgia', serif;
-        }
-        nav {
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 1em;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 1.5em;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ff69b4;
-        }
-        .banner {
-            background: url('https://via.placeholder.com/1200x300') center/cover;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 2em;
-        }
-        .banner h2 {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 0.5em 1em;
             border-radius: 5px;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-card button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #e55a9a;
         }
         footer {
             background-color: rgba(0, 0, 0, 0.7);
@@ -195,8 +102,8 @@
                 display: block;
                 margin: 0.5em 0;
             }
-            .banner {
-                height: 200px;
+            .products {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -207,16 +114,26 @@
         <h1>Евгения Шоп</h1>
     </header>
     <nav>
+        <a href="index.html">Главная</a>
         <a href="dresses.html">Платья</a>
         <a href="skirts.html">Юбки</a>
         <a href="tops.html">Топы</a>
-        <a href="#cart">Корзина</a>
+        <a href="cart.html">Корзина</a>
     </nav>
-    <div class="banner">
-        <h2>Стильная женская одежда</h2>
-    </div>
-    <footer>
-        <p>Евгения Кобиш | Телефон: <a href="tel:+380976161611" style="color: white;">0976161611</a></p>
-    </footer>
-</body>
-</html>
+    <section class="products">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Платье вечернее">
+            <h3>Платье вечернее</h3>
+            <p>Цена: 4500 ₽</p>
+            <button>В корзину</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Платье повседневное">
+            <h3>Платье повседневное</h3>
+            <p>Цена: 2500 ₽</p>
+            <button>В корзину</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Платье коктейльное">
+            <h3>Платье коктейльное</h3>
+            <p>Цена: 3500 ₽</p>
