@@ -2,77 +2,42 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Магазин одежды</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>🔥 StreetStyle Shop</h1>
-    <nav>
-      <a href="#">Главная</a>
-      <a href="#">Каталог</a>
-      <a href="#">Контакты</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Новая коллекция</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x300" alt="Футболка" />
-        <h3>Футболка Oversize</h3>
-        <p>Цена: 800 грн</p>
-        <button>Купить</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x300" alt="Худи" />
-        <h3>Худи Basic</h3>
-        <p>Цена: 1300 грн</p>
-        <button>Купить</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/250x300" alt="Штаны" />
-        <h3>Штаны Cargo</h3>
-        <p>Цена: 1100 грн</p>
-        <button>Купить</button>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <p>© 2025 StreetStyle Shop | Все права защищены</p>
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>Evgenia shop</title>
+  <title>Evgenia Shop</title>
   <style>
+    /* Фон с плавным градиентом */
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       user-select: none;
+      overflow: hidden;
     }
+
+    /* Стиль заголовка */
     h1 {
-      font-size: 4rem;
-      letter-spacing: 4px;
+      font-size: 5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      letter-spacing: 6px;
+      animation: glow 2.5s ease-in-out infinite alternate;
+    }
+
+    /* Анимация свечения */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff7e5f, 0 0 30px #feb47b;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ff7e5f, 0 0 60px #feb47b;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Evgenia shop</h1>
+  <h1>Evgenia Shop</h1>
 </body>
 </html>
-<meta http-equiv="Cache-Control" content="no-store">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
